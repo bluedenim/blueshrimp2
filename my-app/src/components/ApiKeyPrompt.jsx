@@ -20,7 +20,7 @@ export function ApiKeyPrompt(props) {
     )
 
     return (
-        <div className="flex gap-3 align-center items-center">
+        <div className="mt-[15px] flex flex-wrap gap-3 items-center">
             <div className="text-right font-bold grow-0">
                 API Key <span className="border-2 border-zinc-400 rounded-full cursor-pointer" onClick={showApiHelp}>&nbsp;?&nbsp;</span>
             </div>

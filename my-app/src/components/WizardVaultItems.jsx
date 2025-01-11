@@ -52,20 +52,22 @@ https://wiki.guildwars2.com/wiki/API:2/account/wizardsvault/daily
     )
 
     return (
-        <>
+        <div className="mt-[15px]">
             {stateDisplayValue(state)}
             {apiKey && (
                 <>
                     <div className="mt-3 text-center">
                         <button className="" onClick={() => fetchFn()}>↺</button>
                     </div>
-                    <div className="text-left">
-                        <span className='cursor-pointer' onClick={showDataErrorMsg}>🤔</span>
-                    </div>
                 </>
             )}
+            {state.data && (
+                <div className="text-left">
+                    <span className='cursor-pointer' onClick={showDataErrorMsg}>🤔</span>
+                </div>
+            )}
 
-        </>
+        </div>
     )
 }
 
