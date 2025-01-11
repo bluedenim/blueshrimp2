@@ -12,12 +12,12 @@ function App() {
         <div className="grid justify-items-center">
           <a href="https://www.guildwars2.com/en/" target="_blank" rel="noopener noreferrer"><img src={gw2logo} alt="GW2 logo" /></a>
         </div>
-        <h1 className="grid justify-items-center">
+        <h1 className="">
           Wizard's Vault Daily Objectives
         </h1>
-        <div className="grid justify-items-center text-xs">
-          You will need to get an API key from ArenaNet to use the API. See
-          <a href="https://wiki.guildwars2.com/wiki/API:API_key" target="_blank" rel="noopener noreferrer">https://wiki.guildwars2.com/wiki/API:API_key</a>
+        <div className="text-sm">
+          You will need to get an API key from ArenaNet to use the API. See&nbsp;
+          <a href="https://wiki.guildwars2.com/wiki/API:API_key" target="_blank" rel="noopener noreferrer">their Wiki on API_key</a>&nbsp;
           for details. The API key must include the <b>account</b> permission.
         </div>
         <ApiKeyPrompt apiKey={apiKey} setApiKey={setApiKey} />
