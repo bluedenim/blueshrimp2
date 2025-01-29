@@ -7,8 +7,12 @@ export function WizardVaultItems(props) {
 
     const showDataErrorMsg = () => {
         alert(
-`Yes. These objectives currently DO NOT match the ones in-game. 
-This is as best as I can tell the limitation of the API:
+`Does the results match the ones in-game? When I tested this
+a while back, they were not correct. However, a recent test
+showed something that looked correct. Regardless, it's whatever
+the API returns; there isn't much I can do from here.
+
+This is the API endpoint:
 
     v2/account/wizardsvault/daily
     
