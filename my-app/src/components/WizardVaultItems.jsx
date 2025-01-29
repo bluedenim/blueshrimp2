@@ -7,8 +7,12 @@ export function WizardVaultItems(props) {
 
     const showDataErrorMsg = () => {
         alert(
-`Yes. These objectives currently DO NOT match the ones in-game. 
-This is as best as I can tell the limitation of the API:
+`Does the results match the ones in-game? When I tested this
+a while back, they were not correct. However, a recent test
+showed something that looked correct. Regardless, it's whatever
+the API returns; there isn't much I can do from here.
+
+This is the API endpoint:
 
     v2/account/wizardsvault/daily
     
@@ -74,23 +78,33 @@ https://wiki.guildwars2.com/wiki/API:2/account/wizardsvault/daily
 function ObjectiveList(props) {
     const { objectives } = props
 
+    const rows = objectives && objectives.map((objective) => (
+        <tr>
+            <td>{objective.track}</td>
+            <td>{objective.acclaim}</td>
+            <td>{objective.title}</td>
+        </tr>
+    ))
+
     return (
-        <div className="items-center">
-            {objectives && objectives.length > 0 && (
-                <div className="grid grid-cols-[100px_50px_1fr] gap-10 items-center">
-                    <div className="font-bold grow-0">Track</div>
-                    <div className="font-bold grow-0">Acclaim</div>
-                    <div className="font-bold grow text-left">Objective</div>
-                </div>
-            )}
-            {objectives && objectives.map((objective) => (
-                <div className="grid grid-cols-[100px_50px_1fr] gap-10 items-center" key={objective.id}>
-                    <div className="grow-0">{objective.track}</div>
-                    <div className="grow-0 text-left">{objective.acclaim}</div>
-                    <div className="grow text-left">{objective.title}</div>
-                </div> 
-            ))}     
-        </div>
+        <>
+            <div className="items-center">
+                {objectives && objectives.length > 0 && (
+                    <table className="table-auto text-left w-full">
+                        <thead>
+                            <tr>
+                                <th>Track</th>
+                                <th>Acclaim</th>
+                                <th>Objective</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {rows}
+                        </tbody>
+                    </table>
+                )}   
+            </div>        
+        </>
     )
 }
 
